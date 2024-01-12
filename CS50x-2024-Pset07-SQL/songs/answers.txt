@@ -1,0 +1,2 @@
+1. I would calculate the average energy, valence, and danceability of a person’s top 100 songs and map it to two moods.
+2. The listener may listen to several songs repeatedly so it might be a better choice to calculate a weighted average.
