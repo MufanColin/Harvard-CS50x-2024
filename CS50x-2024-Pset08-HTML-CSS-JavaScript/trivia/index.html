@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+            // TODO: Add code to check answers to questions
+
+            // Maybe not the best design, but at least it works!!!
+            // DOMContentLoaded ensures that the whole page is loaded before executing the JavaScript
+            document.addEventListener('DOMContentLoaded', function() {
+                let correctAnswers = document.querySelectorAll('.correct');
+                for (let i = 0, n = correctAnswers.length; i < n; i++) {
+                    correctAnswers[i].addEventListener('click', function() {
+                        correctAnswers[i].style.backgroundColor = 'green';
+                        let tag = correctAnswers[i].getAttribute('data-tag');
+                        document.querySelector(`#feedback1-${tag}`).innerHTML = 'Correct!';
+                    });
+                }
+                let wrongAnswers = document.querySelectorAll('.incorrect');
+                for (let i = 0, n = wrongAnswers.length; i < n; i++) {
+                    wrongAnswers[i].addEventListener('click', function() {
+                        wrongAnswers[i].style.backgroundColor = 'red';
+                        let tag = wrongAnswers[i].getAttribute('data-tag');
+                        document.querySelector(`#feedback1-${tag}`).innerHTML = 'Incorrect';
+                    });
+                }
+                let answerOfQuestionTwo = document.querySelector('input');
+                document.querySelector('#q2-status').addEventListener('click', function() {
+                    if (answerOfQuestionTwo.value == '8') {
+                        answerOfQuestionTwo.style.backgroundColor = "green";
+                        document.querySelector(`#feedback2`).innerHTML = 'Correct!';
+                    } else {
+                        answerOfQuestionTwo.style.backgroundColor = "red";
+                        document.querySelector(`#feedback2`).innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which city is the capital of China?</h3>
+                <button class="incorrect" , data-tag="1">Tokyo</button>
+                <button class="incorrect" , data-tag="1">New York</button>
+                <button class="correct" , data-tag="1">Beijing</button>
+                <p id="feedback1-1"></p>
+
+                <h3>Which mountain is the highest in the world?</h3>
+                <button class="correct" , data-tag="2">Mount Everest</button>
+                <button class="incorrect" , data-tag="2">Mount Kilimanjaro</button>
+                <button class="incorrect" , data-tag="2">Mount Fuji</button>
+                <p id="feedback1-2"></p>
+
+                <h3>What is the value of \(\displaystyle{\int}_{0}^{\pi/2}\sin x\mathrm{d}x\)?</h3>
+                <button class="incorrect" , data-tag="3">\(0\)</button>
+                <button class="correct" , data-tag="3">\(1\)</button>
+                <button class="incorrect" , data-tag="3">\(\pi\)</button>
+                <p id="feedback1-3"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>A byte = ? bits (Please type a number.)</h3>
+                <input></input>
+                <button id='q2-status'>Check Answer</button>
+                <p id="feedback2"></p>
+            </div>
+        </div>
+    </body>
+
+</html>

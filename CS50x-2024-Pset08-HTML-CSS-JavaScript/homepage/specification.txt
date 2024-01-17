@@ -1,0 +1,26 @@
+HTML tags:
+1. link
+2. script
+3. div
+4. p
+5. li
+6. button
+7. span
+8. nav
+9. form
+10. button
+...
+
+
+CSS properties:
+1. padding-left
+2. background-color
+3. margin
+4. font-family
+5. transition
+...
+
+
+I borrowed the JavaScript code from trivia problem and used multiple Bootstramp features such as nav bars, cards, alerts, etc to make my website look better.
+
+
